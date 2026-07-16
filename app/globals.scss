@@ -1,0 +1,43 @@
+@use '../styles/tokens/colors';
+@use '../styles/tokens/typography';
+@use '../styles/tokens/spacing';
+@use '../styles/tokens/shape';
+@use '../styles/tokens/base';
+
+/* Hebrew glyphs: Assistant replaces the design system's default
+   Plus Jakarta Sans stack. See app/layout.tsx for the next/font/google
+   Assistant load that defines --font-assistant. */
+:root {
+  --font-sans: var(--font-assistant), sans-serif;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+@media (max-width: 640px) {
+  [data-r='nav'] {
+    padding: 12px 16px !important;
+    flex-wrap: wrap !important;
+    gap: 8px 12px !important;
+  }
+  [data-r='navlinks'] {
+    gap: 14px !important;
+    font-size: 13px !important;
+    flex-wrap: wrap !important;
+    justify-content: flex-end !important;
+  }
+}
+
+@media (max-width: 760px) {
+  [data-r='modal-card'] {
+    height: 92vh !important;
+  }
+  [data-r='modal-grid'] {
+    grid-template-columns: 1fr !important;
+    overflow-y: auto !important;
+  }
+  [data-r='modal-media'] {
+    min-height: auto !important;
+  }
+}

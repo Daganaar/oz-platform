@@ -1,0 +1,220 @@
+.section {
+  padding: 44px 32px;
+  background: var(--surface-brand-soft);
+}
+
+.grid {
+  max-width: 1080px;
+  margin: 0 auto;
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+  gap: 88px;
+  align-items: stretch;
+}
+
+.copy {
+  display: flex;
+  flex-direction: column;
+  gap: 11px;
+  align-items: flex-start;
+}
+
+.badge {
+  display: inline-flex;
+  align-items: center;
+  gap: 7px;
+  background: #fff;
+  border: 1px solid var(--purple-200);
+  color: var(--text-brand);
+  padding: 6px 13px;
+  border-radius: 9999px;
+  font-size: 12px;
+  font-weight: 700;
+  letter-spacing: 0.04em;
+}
+
+.title {
+  margin: 0;
+  font-size: 26px;
+  font-weight: 800;
+  color: var(--text-strong);
+}
+
+.body {
+  margin: 0;
+  font-size: 14px;
+  line-height: 1.5;
+  color: var(--text-body);
+}
+
+.listWrap {
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+}
+
+.listLabel {
+  font-size: 12px;
+  font-weight: 700;
+  color: var(--text-strong);
+}
+
+.list {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+  width: 320px;
+  max-width: 100%;
+}
+
+.listItem {
+  display: flex;
+  align-items: flex-start;
+  gap: 9px;
+  font-size: 12px;
+  line-height: 1.5;
+  color: var(--text-body);
+}
+
+.listCheck {
+  flex-shrink: 0;
+  margin-top: 3px;
+}
+
+.formCard {
+  width: 100%;
+  margin-top: 8px;
+  background: #fff;
+  border: 1px solid var(--border-subtle);
+  border-radius: 14px;
+  padding: 18px;
+  box-shadow: var(--shadow-sm);
+}
+
+.form {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+.formLabel {
+  font-size: 13.5px;
+  font-weight: 600;
+  color: var(--text-strong);
+}
+
+.formRow {
+  display: flex;
+  gap: 10px;
+  flex-wrap: wrap;
+}
+
+.input {
+  flex: 1;
+  min-width: 180px;
+  padding: 12px 15px;
+  border: 1px solid var(--border-default);
+  border-radius: 10px;
+  font-size: 15px;
+  font-family: var(--font-sans);
+  color: var(--text-strong);
+  outline: none;
+  background: var(--surface-brand-soft);
+}
+
+.submitBtn {
+  background: var(--brand);
+  color: #fff;
+  padding: 12px 22px;
+  border: none;
+  border-radius: 10px;
+  font-weight: 700;
+  font-size: 15px;
+  font-family: var(--font-sans);
+  cursor: pointer;
+  white-space: nowrap;
+}
+
+.errorText {
+  font-size: 12.5px;
+  color: var(--danger, #c0362c);
+  font-weight: 600;
+}
+
+.successRow {
+  display: inline-flex;
+  align-items: center;
+  gap: 9px;
+  background: #fff;
+  border: 1px solid var(--purple-200);
+  border-radius: 10px;
+  padding: 12px 15px;
+  font-size: 14px;
+  line-height: 1.45;
+  color: var(--text-body);
+}
+
+.successIcon {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 24px;
+  height: 24px;
+  border-radius: 9999px;
+  background: var(--success-soft);
+  color: var(--success);
+  flex-shrink: 0;
+}
+
+.imageCol {
+  display: flex;
+  flex-direction: row;
+  gap: 20px;
+  align-items: stretch;
+  justify-content: flex-start;
+  position: static;
+}
+
+.imageFrame {
+  position: relative;
+  border-radius: 16px;
+  overflow: hidden;
+  box-shadow: var(--shadow-sm);
+  flex: 1;
+  min-height: 200px;
+  width: 371px;
+  max-width: 100%;
+  height: 371px;
+}
+
+.image {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+  filter: saturate(0.95);
+}
+
+.imageGradient {
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(180deg, rgba(61, 7, 95, 0) 40%, rgba(61, 7, 95, 0.35) 100%);
+  left: -97px;
+  top: -4px;
+}
+
+.imageBadge {
+  position: absolute;
+  top: 14px;
+  right: 14px;
+  background: rgba(255, 255, 255, 0.92);
+  backdrop-filter: blur(6px);
+  color: var(--text-brand);
+  font-size: 12px;
+  font-weight: 700;
+  padding: 6px 12px;
+  border-radius: 9999px;
+}

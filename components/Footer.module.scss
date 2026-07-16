@@ -1,0 +1,82 @@
+.footer {
+  scroll-margin-top: 76px;
+  background: var(--purple-900);
+  color: #fff;
+  padding: 48px 32px 32px;
+}
+
+.row {
+  max-width: 920px;
+  margin: 0 auto;
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  gap: 32px;
+  flex-wrap: wrap;
+}
+
+.brandCol {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  max-width: 300px;
+}
+
+.brand {
+  display: flex;
+  align-items: center;
+  gap: 9px;
+}
+
+.logoWrap {
+  width: 34px;
+  height: 34px;
+  display: flex;
+}
+
+.brandName {
+  font-weight: 800;
+  font-size: 20px;
+}
+
+.tagline {
+  margin: 0;
+  font-size: 14px;
+  line-height: 1.6;
+  color: var(--purple-200);
+}
+
+.contactCol {
+  display: flex;
+  flex-direction: column;
+  gap: 14px;
+}
+
+.eyebrow {
+  font-size: 12px;
+  font-weight: 700;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: var(--purple-300);
+}
+
+.contactLink {
+  display: flex;
+  align-items: center;
+  gap: 9px;
+  font-size: 15px;
+  color: #fff;
+}
+
+.ltrNum {
+  unicode-bidi: isolate;
+}
+
+.copyright {
+  max-width: 920px;
+  margin: 28px auto 0;
+  padding-top: 20px;
+  border-top: 1px solid var(--purple-800);
+  font-size: 13px;
+  color: var(--purple-300);
+}

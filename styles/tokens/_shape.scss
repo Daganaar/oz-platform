@@ -1,0 +1,33 @@
+/* OZ — Radius, elevation (shadow) & motion tokens.
+   Shape: moderate soft rounding. Cards 12px, controls 8px, tags pill.
+   Shadows: neutral grey, low-spread, layered — never heavy or coloured. */
+
+:root {
+  /* Radius */
+  --radius-xs:   4px;
+  --radius-sm:   6px;
+  --radius-md:   8px;   /* buttons, inputs */
+  --radius-lg:   12px;  /* cards */
+  --radius-xl:   16px;  /* large surfaces, modals */
+  --radius-2xl:  24px;  /* hero / feature panels */
+  --radius-full: 999px; /* pills, avatars */
+
+  /* Elevation — soft neutral shadows */
+  --shadow-xs:  0 1px 2px rgba(16, 12, 24, 0.06);
+  --shadow-sm:  0 1px 3px rgba(16, 12, 24, 0.08), 0 1px 2px rgba(16, 12, 24, 0.04);
+  --shadow-md:  0 4px 12px rgba(16, 12, 24, 0.08), 0 2px 4px rgba(16, 12, 24, 0.04);
+  --shadow-lg:  0 12px 28px rgba(16, 12, 24, 0.10), 0 4px 8px rgba(16, 12, 24, 0.05);
+  --shadow-xl:  0 24px 48px rgba(16, 12, 24, 0.14), 0 8px 16px rgba(16, 12, 24, 0.06);
+
+  /* Subtle brand-tinted focus glow for inputs */
+  --shadow-focus: 0 0 0 3px var(--ring-focus);
+
+  /* Motion — quick, eased, no bounce. Trustworthy = calm. */
+  --ease-standard: cubic-bezier(0.2, 0, 0, 1);
+  --ease-out:      cubic-bezier(0.16, 1, 0.3, 1);
+  --ease-in:       cubic-bezier(0.4, 0, 1, 1);
+
+  --duration-fast:   120ms;
+  --duration-normal: 200ms;
+  --duration-slow:   320ms;
+}

@@ -1,0 +1,91 @@
+/* OZ — Color tokens
+   Brand: deep royal purple (#3D075F) anchored at --purple-700.
+   Neutrals: near-true grey, a hair cool, so purple reads as the only "color".
+   Use the SEMANTIC aliases in product code; the raw ramps exist for edge cases. */
+
+:root {
+  /* ---- Brand purple ramp (anchor 700 = #3D075F) ---- */
+  --purple-50:  #F7F1FB;
+  --purple-100: #EFE2F6;
+  --purple-200: #DCC4EA;
+  --purple-300: #C09BDA;
+  --purple-400: #9B63BF;
+  --purple-500: #76329E;
+  --purple-600: #571580;
+  --purple-700: #3D075F;  /* brand */
+  --purple-800: #31064C;
+  --purple-900: #24043A;
+  --purple-950: #170226;
+
+  /* ---- Neutral / grey ramp ---- */
+  --white:      #FFFFFF;
+  --grey-50:    #FAFAFB;
+  --grey-100:   #F4F4F6;
+  --grey-150:   #EDEDF1;
+  --grey-200:   #E4E4EA;
+  --grey-300:   #D3D3DB;
+  --grey-400:   #ADADB8;
+  --grey-500:   #82828F;
+  --grey-600:   #5E5E6B;
+  --grey-700:   #45454F;
+  --grey-800:   #2C2C34;
+  --grey-900:   #1A1A1F;
+  --grey-950:   #0F0F12;
+  --black:      #0A0A0C;
+
+  /* ---- Semantic: status ---- */
+  --green-50:   #ECF8F1;
+  --green-500:  #1F9D60;
+  --green-600:  #16804E;
+  --green-700:  #0F6740;
+
+  --amber-50:   #FBF3E6;
+  --amber-500:  #C7860D;
+  --amber-600:  #A26C09;
+  --amber-700:  #7E5407;
+
+  --red-50:     #FBECEA;
+  --red-500:    #D23F33;
+  --red-600:    #B42E23;
+  --red-700:    #93231B;
+
+  /* ---- Semantic aliases (use these in product code) ---- */
+  /* Surfaces */
+  --surface-page:        var(--grey-50);
+  --surface-card:        var(--white);
+  --surface-sunken:      var(--grey-100);
+  --surface-raised:      var(--white);
+  --surface-inverse:     var(--purple-700);
+  --surface-brand-soft:  var(--purple-50);
+  --surface-overlay:     rgba(15, 8, 22, 0.48);
+
+  /* Text */
+  --text-strong:   var(--grey-900);
+  --text-body:     var(--grey-700);
+  --text-muted:    var(--grey-500);
+  --text-subtle:   var(--grey-400);
+  --text-on-brand: var(--white);
+  --text-brand:    var(--purple-700);
+  --text-link:     var(--purple-600);
+
+  /* Borders */
+  --border-subtle:  var(--grey-200);
+  --border-default: var(--grey-300);
+  --border-strong:  var(--grey-400);
+  --border-brand:   var(--purple-700);
+  --ring-focus:     rgba(61, 7, 95, 0.32);
+
+  /* Brand actions */
+  --brand:           var(--purple-700);
+  --brand-hover:     var(--purple-800);
+  --brand-active:    var(--purple-900);
+  --brand-contrast:  var(--white);
+
+  /* Status semantic */
+  --success:      var(--green-600);
+  --success-soft: var(--green-50);
+  --warning:      var(--amber-600);
+  --warning-soft: var(--amber-50);
+  --danger:       var(--red-600);
+  --danger-soft:  var(--red-50);
+}

@@ -1,0 +1,52 @@
+/* OZ — Base element styles & helpers (depends on tokens above). */
+
+*, *::before, *::after { box-sizing: border-box; }
+
+html { -webkit-text-size-adjust: 100%; }
+
+body {
+  margin: 0;
+  font-family: var(--font-sans);
+  font-size: var(--body-size);
+  line-height: var(--body-leading);
+  font-weight: var(--weight-regular);
+  color: var(--text-body);
+  background: var(--surface-page);
+  -webkit-font-smoothing: antialiased;
+  text-rendering: optimizeLegibility;
+  font-feature-settings: " cv11" 1; /* friendlier single-storey forms off by default */
+}
+
+h1, h2, h3, h4, h5, h6 {
+  margin: 0;
+  color: var(--text-strong);
+  font-weight: var(--weight-bold);
+  line-height: var(--leading-tight);
+  letter-spacing: var(--tracking-tight);
+}
+
+p { margin: 0; }
+
+a {
+  color: var(--text-link);
+  text-decoration: none;
+}
+a:hover { text-decoration: underline; }
+
+:where(button, input, select, textarea) { font: inherit; }
+
+code, kbd, samp, pre { font-family: var(--font-mono); }
+
+::selection { background: var(--purple-200); color: var(--purple-900); }
+
+/* Tabular figures helper for prices & data */
+.oz-tnum { font-variant-numeric: tabular-nums; }
+
+/* Eyebrow / overline label */
+.oz-eyebrow {
+  font-size: var(--text-xs);
+  font-weight: var(--weight-bold);
+  letter-spacing: var(--tracking-caps);
+  text-transform: uppercase;
+  color: var(--text-brand);
+}
