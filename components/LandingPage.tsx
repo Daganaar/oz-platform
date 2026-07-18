@@ -3,6 +3,7 @@
 import { useEffect, useState } from 'react';
 import type { Hostel } from '@/lib/hostels';
 import { postLead, patchLeadWhatsapp } from '@/lib/leadApi';
+import { isValidEmail, isValidIsraeliPhone } from '@/lib/validation';
 import { Nav } from './Nav';
 import { CouponBar } from './CouponBar';
 import { WhatsappOptInModal } from './WhatsappOptInModal';
@@ -16,7 +17,6 @@ import { NorthContactModal } from './NorthContactModal';
 import styles from './LandingPage.module.scss';
 
 const COUPON = 'OZ69';
-const EMAIL_RE = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
 
 export function LandingPage() {
   // hostel detail modal
@@ -63,10 +63,10 @@ export function LandingPage() {
     setSubError('');
   }
 
-  function onSubscribe(e: React.FormEvent) {
+  function onSubscribe(e: React.SubmitEvent<HTMLFormElement>) {
     e.preventDefault();
     const value = email.trim();
-    if (!EMAIL_RE.test(value)) {
+    if (!isValidEmail(value)) {
       setSubError('נא להזין כתובת מייל תקינה');
       return;
     }
@@ -103,12 +103,11 @@ export function LandingPage() {
     setWaModalOpen(false);
   }
 
-  function addWa(e: React.FormEvent) {
+  function addWa(e: React.SubmitEvent<HTMLFormElement>) {
     e.preventDefault();
     const wa = couponWa.trim();
-    const digits = wa.replace(/[^\d]/g, '');
-    if (digits.length < 9) {
-      setWaError('מספר לא תקין');
+    if (!isValidIsraeliPhone(wa)) {
+      setWaError('נא להזין מספר נייד ישראלי תקין (05XXXXXXXX)');
       return;
     }
     setWaAdded(true);
@@ -164,7 +163,7 @@ export function LandingPage() {
     setLeadError('');
   }
 
-  function submitLead(e: React.FormEvent) {
+  function submitLead(e: React.SubmitEvent<HTMLFormElement>) {
     e.preventDefault();
     const name = leadName.trim();
     const phone = leadPhone.trim();
@@ -172,8 +171,8 @@ export function LandingPage() {
       setLeadError('נא להזין שם');
       return;
     }
-    if (phone.replace(/\D/g, '').length < 9) {
-      setLeadError('נא להזין מספר טלפון תקין');
+    if (!isValidIsraeliPhone(phone)) {
+      setLeadError('נא להזין מספר נייד ישראלי תקין (05XXXXXXXX)');
       return;
     }
     setLeadSent(true);
@@ -186,11 +185,11 @@ export function LandingPage() {
     setLtError('');
   }
 
-  function submitLt(e: React.FormEvent) {
+  function submitLt(e: React.SubmitEvent<HTMLFormElement>) {
     e.preventDefault();
     const value = ltEmail.trim();
     if (value.indexOf('@') !== -1) {
-      if (!EMAIL_RE.test(value)) {
+      if (!isValidEmail(value)) {
         setLtError('נא להזין כתובת מייל תקינה');
         return;
       }
@@ -198,9 +197,8 @@ export function LandingPage() {
       setLtError('');
       postLead({ source: 'long_term', email: value });
     } else {
-      const digits = value.replace(/[^\d]/g, '');
-      if (digits.length < 9) {
-        setLtError('נא להזין מייל או מספר וואטסאפ תקין');
+      if (!isValidIsraeliPhone(value)) {
+        setLtError('נא להזין מייל או מספר וואטסאפ ישראלי תקין (05XXXXXXXX)');
         return;
       }
       setLtSent(true);

@@ -1,4 +1,5 @@
 import type { Hostel } from '@/lib/hostels';
+import { ArrowLeftIcon, CheckIcon, ChevronRightIcon, CloseIcon, MapPinIcon, TagIcon } from './icons';
 import styles from './HostelModal.module.scss';
 
 type HostelModalProps = {
@@ -32,9 +33,7 @@ export function HostelModal({
     <div onClick={closeModal} className={styles.overlay}>
       <div onClick={(e) => e.stopPropagation()} data-r="modal-card" className={styles.card}>
         <button onClick={closeModal} aria-label="סגור" className={styles.closeBtn}>
-          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth={2} strokeLinecap="round" strokeLinejoin="round" width={20} height={20}>
-            <path d="M18 6 6 18M6 6l12 12"></path>
-          </svg>
+          <CloseIcon width={20} height={20} />
         </button>
 
         {!booking ? (
@@ -91,10 +90,7 @@ export function HostelModal({
                   שהייה של חודש ומעלה — <strong className={styles.longStayPrice}>49 ש״ח</strong> למיטה ללילה
                 </span>
                 <div className={styles.address}>
-                  <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth={2} strokeLinecap="round" strokeLinejoin="round" width={16} height={16}>
-                    <path d="M20 10c0 4.99-5.54 10.19-7.4 11.8a1 1 0 0 1-1.2 0C9.54 20.19 4 14.99 4 10a8 8 0 0 1 16 0"></path>
-                    <circle cx={12} cy={10} r={3}></circle>
-                  </svg>
+                  <MapPinIcon width={16} height={16} />
                   {hostel.address}
                 </div>
                 <p className={styles.desc}>{hostel.desc}</p>
@@ -105,15 +101,11 @@ export function HostelModal({
                   <div key={a.label} className={styles.amenity}>
                     {a.ok ? (
                       <span className={styles.amenityOk}>
-                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth={2.4} strokeLinecap="round" strokeLinejoin="round" width={12} height={12}>
-                          <path d="M20 6 9 17l-5-5"></path>
-                        </svg>
+                        <CheckIcon width={12} height={12} />
                       </span>
                     ) : (
                       <span className={styles.amenityNotOk}>
-                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth={2.2} strokeLinecap="round" strokeLinejoin="round" width={11} height={11}>
-                          <path d="M18 6 6 18M6 6l12 12"></path>
-                        </svg>
+                        <CloseIcon strokeWidth={2.2} width={11} height={11} />
                       </span>
                     )}
                     {a.label}
@@ -124,10 +116,7 @@ export function HostelModal({
               <div className={styles.ctaCol}>
                 {subscribed && (
                   <div className={styles.couponNotice}>
-                    <svg viewBox="0 0 24 24" fill="none" stroke="var(--text-brand)" strokeWidth={2} strokeLinecap="round" strokeLinejoin="round" width={17} height={17} className={styles.couponNoticeIcon}>
-                      <path d="M9 5H2v7l6.29 6.29a2.4 2.4 0 0 0 3.42 0l4.58-4.58a2.4 2.4 0 0 0 0-3.42Z"></path>
-                      <circle cx={5.5} cy={8.5} r={1}></circle>
-                    </svg>
+                    <TagIcon stroke="var(--text-brand)" width={17} height={17} className={styles.couponNoticeIcon} />
                     <span>
                       הטבת חבר מועדון: הזינו את הקוד <strong className={styles.couponNoticeCode}>{coupon}</strong> בעת ההזמנה וקבלו לילה ב-69 ש״ח.
                     </span>
@@ -135,9 +124,7 @@ export function HostelModal({
                 )}
                 <button onClick={openBooking} className={styles.bookBtn}>
                   הזמן עכשיו
-                  <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth={2} strokeLinecap="round" strokeLinejoin="round" width={18} height={18}>
-                    <path d="M19 12H5M12 19l-7-7 7-7"></path>
-                  </svg>
+                  <ArrowLeftIcon />
                 </button>
                 <p className={styles.bookNote}>ההזמנה מתבצעת במערכת ההזמנות של עוז.</p>
               </div>
@@ -147,9 +134,7 @@ export function HostelModal({
           <div className={styles.bookingView}>
             <div className={styles.bookingHeader}>
               <button onClick={backFromBooking} className={styles.backBtn}>
-                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth={2} strokeLinecap="round" strokeLinejoin="round" width={16} height={16}>
-                  <path d="m9 18 6-6-6-6"></path>
-                </svg>
+                <ChevronRightIcon />
                 חזרה לפרטי האכסניה
               </button>
               <span className={styles.bookingTitle}>הזמנה · {hostel.name}</span>

@@ -1,12 +1,13 @@
 import { z } from 'zod';
 import { createServiceClient } from '@/lib/supabase/admin';
+import { isValidEmail, isValidIsraeliPhone } from '@/lib/validation';
 
 const leadSchema = z.object({
   source: z.enum(['coupon', 'north_contact', 'long_term']),
-  email: z.string().email().optional(),
-  whatsapp: z.string().min(9).optional(),
+  email: z.string().refine(isValidEmail, 'invalid email').optional(),
+  whatsapp: z.string().refine(isValidIsraeliPhone, 'invalid israeli phone').optional(),
   name: z.string().min(2).optional(),
-  phone: z.string().min(9).optional(),
+  phone: z.string().refine(isValidIsraeliPhone, 'invalid israeli phone').optional(),
 });
 
 export async function POST(request: Request) {

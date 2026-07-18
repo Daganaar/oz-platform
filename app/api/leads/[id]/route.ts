@@ -1,8 +1,9 @@
 import { z } from 'zod';
 import { createServiceClient } from '@/lib/supabase/admin';
+import { isValidIsraeliPhone } from '@/lib/validation';
 
 const patchSchema = z.object({
-  whatsapp: z.string().min(9),
+  whatsapp: z.string().refine(isValidIsraeliPhone, 'invalid israeli phone'),
 });
 
 export async function PATCH(

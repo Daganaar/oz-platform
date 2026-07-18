@@ -1,9 +1,10 @@
+import { CheckIcon, SparkleIcon } from './icons';
 import styles from './ComingSoonTeaser.module.scss';
 
 type ComingSoonTeaserProps = {
   ltEmailVal: string;
   onLtEmail: (e: React.ChangeEvent<HTMLInputElement>) => void;
-  submitLt: (e: React.FormEvent) => void;
+  submitLt: (e: React.SubmitEvent<HTMLFormElement>) => void;
   ltError: string;
   ltSent: boolean;
 };
@@ -14,9 +15,7 @@ export function ComingSoonTeaser({ ltEmailVal, onLtEmail, submitLt, ltError, ltS
       <div className={styles.grid}>
         <div className={styles.copy}>
           <span className={styles.badge}>
-            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth={2} strokeLinecap="round" strokeLinejoin="round" width={14} height={14}>
-              <path d="M9.94 15.5A2 2 0 0 0 8.5 14.06l-6.14-1.58a.5.5 0 0 1 0-.96L8.5 9.94A2 2 0 0 0 9.94 8.5l1.58-6.14a.5.5 0 0 1 .96 0L14.06 8.5A2 2 0 0 0 15.5 9.94l6.14 1.58a.5.5 0 0 1 0 .96L15.5 14.06a2 2 0 0 0-1.44 1.44l-1.58 6.14a.5.5 0 0 1-.96 0z"></path>
-            </svg>
+            <SparkleIcon />
             בקרוב
           </span>
           <h2 className={styles.title}>הלנה ארוכת טווח בדירות ומתחמים</h2>
@@ -27,21 +26,15 @@ export function ComingSoonTeaser({ ltEmailVal, onLtEmail, submitLt, ltError, ltS
             <span className={styles.listLabel}>בקרוב תוכלו:</span>
             <ul className={styles.list}>
               <li className={styles.listItem}>
-                <svg viewBox="0 0 24 24" fill="none" stroke="var(--text-brand)" strokeWidth={2.4} strokeLinecap="round" strokeLinejoin="round" width={17} height={17} className={styles.listCheck}>
-                  <path d="M20 6 9 17l-5-5"></path>
-                </svg>
+                <CheckIcon stroke="var(--text-brand)" width={17} height={17} className={styles.listCheck} />
                 למצוא ולהזמין דירות ומתחמים ישירות דרך המערכת
               </li>
               <li className={styles.listItem}>
-                <svg viewBox="0 0 24 24" fill="none" stroke="var(--text-brand)" strokeWidth={2.4} strokeLinecap="round" strokeLinejoin="round" width={17} height={17} className={styles.listCheck}>
-                  <path d="M20 6 9 17l-5-5"></path>
-                </svg>
+                <CheckIcon stroke="var(--text-brand)" width={17} height={17} className={styles.listCheck} />
                 לעבוד ללא צורך בחוזים פרטניים מול כל ספק
               </li>
               <li className={styles.listItem}>
-                <svg viewBox="0 0 24 24" fill="none" stroke="var(--text-brand)" strokeWidth={2.4} strokeLinecap="round" strokeLinejoin="round" width={17} height={17} className={styles.listCheck}>
-                  <path d="M20 6 9 17l-5-5"></path>
-                </svg>
+                <CheckIcon stroke="var(--text-brand)" width={17} height={17} className={styles.listCheck} />
                 ליהנות מחשבונית מרכזת אחת לכל ההזמנות
               </li>
             </ul>
@@ -67,9 +60,7 @@ export function ComingSoonTeaser({ ltEmailVal, onLtEmail, submitLt, ltError, ltS
             ) : (
               <div className={styles.successRow}>
                 <span className={styles.successIcon}>
-                  <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth={2.4} strokeLinecap="round" strokeLinejoin="round" width={13} height={13}>
-                    <path d="M20 6 9 17l-5-5"></path>
-                  </svg>
+                  <CheckIcon width={13} height={13} />
                 </span>
                 תודה! נעדכן אתכם במייל כשההלנה ארוכת הטווח תיפתח.
               </div>

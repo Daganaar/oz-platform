@@ -1,0 +1,15 @@
+export { ArrowLeftIcon } from './ArrowLeftIcon';
+export { BuildingIcon } from './BuildingIcon';
+export { CalendarIcon } from './CalendarIcon';
+export { CheckIcon } from './CheckIcon';
+export { ChevronRightIcon } from './ChevronRightIcon';
+export { CloseIcon } from './CloseIcon';
+export { CopyIcon } from './CopyIcon';
+export { MailIcon } from './MailIcon';
+export { MapPinIcon } from './MapPinIcon';
+export { PhoneIcon } from './PhoneIcon';
+export { ShieldCheckIcon } from './ShieldCheckIcon';
+export { SparkleIcon } from './SparkleIcon';
+export { TagIcon } from './TagIcon';
+export { WhatsAppBubbleIcon } from './WhatsAppBubbleIcon';
+export { WhatsAppIcon } from './WhatsAppIcon';
